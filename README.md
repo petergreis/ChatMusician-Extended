@@ -17,7 +17,7 @@ ChatMusician Extended is trained on corpus cultivated from [Art der Fuge](www.ar
 
 ## Training Procedure
 
-Follwowing the initial hyperparaters from ChatMusician the fine tuning was executed on resources from [Paperspace's Gradient](https://www.paperspace.com/artificial-intelligence) and [Google Colab](https://colab.research.google.com). Both NVidia A100 and A6000 resources were used.
+Following the initial hyperparaters from ChatMusician the fine tuning was executed on resources from [Paperspace's Gradient](https://www.paperspace.com/artificial-intelligence) and [Google Colab](https://colab.research.google.com). Both NVidia A100 and A6000 resources were used.
 
 ## Evaluation
 
@@ -27,35 +27,33 @@ Follwowing the initial hyperparaters from ChatMusician the fine tuning was execu
 
 - Python 3.8 and above
 - Pytorch 2.0 and above are recommended
+
+For Windows and Linux environments:
+
 - CUDA 11.4 and above are recommended
 - Deepspeed 0.10 and above are recommended
 
-Python dependency installation:
+For macOS and MLX evaluation:
 
-```
-pip install -r requirements.txt
-```
+- [mlx](https://ml-explore.github.io/mlx/build/html/index.html) 0.11.1 and above
+- mlx-lm 0.10.0 and above are recommended
 
 ## Inference
 
 ### web demo (with audio)
 
-To render audio in real-time, you must install abcmidi and MuseScore.
-
-1. Install abc2midi.
-
-```
-sudo apt-get update
-sudo apt-get install abcmidi
-```
-
-2. Install MuseScore([on Linux](https://musescore.org/en/handbook/3/install-linux), [on Mac](https://musescore.org/en/handbook/3/install-macos), [on Windows](https://musescore.org/en/handbook/3/install-windows)).
-
 Then launch a gradio demo:
 
 ```bash
 cd ChatMusician/
-python model/infer/chatmusician_web_demo.py -c "m-a-p/ChatMusician" --server_port 8888
+python model/infer/chatmusician_web_demo.py -c "m-a-p/ChatMusician" --server_port 8890
+```
+
+or macOS accelerated with mlx:
+
+```bash
+cd ChatMusician/
+python model/infer/chatmusician_web_demo_mlx.py -c "m-a-p/ChatMusician" --server_port 8890
 ```
 
 Prompt example:
@@ -69,9 +67,5 @@ Prompt example:
 ## Training
 
 ### Data Preprocessing
-
-### Pretraining or Supervised Fine-tuning
-
-## Merge Peft Model
 
 ## Limitations
