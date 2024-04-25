@@ -17,7 +17,7 @@ ChatMusician Extended is trained on corpus cultivated from [Art der Fuge](www.ar
 
 ## Training Procedure
 
-Following the initial hyperparaters from ChatMusician the fine tuning was executed on resources from [Paperspace's Gradient](https://www.paperspace.com/artificial-intelligence) and [Google Colab](https://colab.research.google.com). Both NVidia A100 and A6000 resources were used.
+Following the [initial hyperparameters](https://github.com/hf-lin/ChatMusician?tab=readme-ov-file#training-procedure) from ChatMusician the fine tuning was executed on resources from [Paperspace's Gradient](https://www.paperspace.com/artificial-intelligence) and [Google Colab](https://colab.research.google.com). Both NVidia A100 and A6000 resources were used.
 
 ## Evaluation
 
@@ -57,6 +57,10 @@ torchvision               0.19.0.dev20240422       py312_cpu    pytorch-nightly
 ```
 
 Notably this also adds bfloat16 support to macOS/MPS
+
+### MLX notes
+
+After fine tuning and merging, the resulting model will be need to be converted to a [supported format](https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.load.html) for MLX. A local capable convert script has been included here as part of this repository.
 
 ## Inference
 
