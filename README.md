@@ -25,6 +25,8 @@ Following the initial hyperparaters from ChatMusician the fine tuning was execut
 
 ## Requirements
 
+As with the initial project:
+
 - Python 3.8 and above
 - Pytorch 2.0 and above are recommended
 
@@ -37,6 +39,24 @@ For macOS and MLX evaluation:
 
 - [mlx](https://ml-explore.github.io/mlx/build/html/index.html) 0.11.1 and above
 - mlx-lm 0.10.0 and above are recommended
+
+To avoid certain non-implementations errors in pytorch and macOS (RuntimeError: MPS does not support cumsum op with int64 input), install the latest pytorch nightly:
+
+```bash
+conda install pytorch-nightly::pytorch torchvision torchaudio -c pytorch-nightly
+
+#  or
+
+pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cpu
+
+# Check - or use pip list
+conda list | grep torch
+pytorch                   2.4.0.dev20240422        py3.12_0     pytorch-nightly
+torchaudio                2.2.0.dev20240422        py312_cpu    pytorch-nightly
+torchvision               0.19.0.dev20240422       py312_cpu    pytorch-nightly
+```
+
+Notably this also adds bfloat16 support to macOS/MPS
 
 ## Inference
 
