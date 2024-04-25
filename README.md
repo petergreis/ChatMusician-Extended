@@ -60,7 +60,7 @@ Notably this also adds bfloat16 support to macOS/MPS
 
 ### MLX notes
 
-After fine tuning and merging, the resulting model will be need to be converted to a [supported format](https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.load.html) for MLX. A local capable convert script has been included here as part of this repository.
+After fine tuning and merging, the resulting model will be need to be converted to a [supported format](https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.load.html) for MLX. A local capable [convert script](https://github.com/petergreis/ChatMusician-Extended/blob/main/convert_to_safetensors.py) has been included here as part of this repository.
 
 ## Inference
 
